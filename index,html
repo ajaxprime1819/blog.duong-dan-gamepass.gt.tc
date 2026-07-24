@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cày Thuê Game</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Cày Thuê - Hạt Giống</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -21,248 +21,228 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             width: 100%;
         }
 
-        .section-block {
-            margin-bottom: 50px;
-        }
-
-        .header-title {
+        /* HEADER TITLE */
+        .page-title {
             text-align: center;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 900;
             color: #1e1135;
-            margin-bottom: 25px;
             text-transform: uppercase;
-            position: relative;
+            margin-bottom: 8px;
         }
 
-        .header-title .highlight {
+        .page-title span {
             color: #7c3aed;
         }
 
-        .header-title::after {
+        .page-title::after {
             content: '';
             display: block;
-            width: 50px;
+            width: 60px;
             height: 3px;
             background-color: #1e1135;
-            margin: 8px auto 0 auto;
+            margin: 8px auto 15px auto;
             border-radius: 2px;
         }
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+        .sub-notice {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #e11d48;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
         }
 
-        @media (max-width: 992px) {
-            .card-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 576px) {
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .card {
+        /* FORM BOX */
+        .form-card {
             background-color: #ffffff;
             border-radius: 12px;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px 30px;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        .form-group {
+            margin-bottom: 25px;
         }
 
-        .card-img-container {
-            width: 100%;
-            height: 180px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            background-color: #ffffff;
+        .step-title {
             display: flex;
             align-items: center;
-            justify-content: center;
-        }
-
-        .card-img-container a {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        .card-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border: none;
-        }
-
-        .card-title {
+            gap: 10px;
             font-size: 16px;
-            font-weight: 900;
-            color: #1a202c;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            text-align: center;
-        }
-
-        .card-status {
-            font-size: 13px;
             font-weight: 700;
-            color: #10b981;
-            margin-bottom: 15px;
+            color: #1e1135;
+            margin-bottom: 12px;
         }
 
-        .btn-view {
-            width: 100%;
-            padding: 10px 0;
-            background: linear-gradient(180deg, #2c1a32 0%, #170d1e 100%);
+        .step-num {
+            background-color: #2563eb;
             color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            text-decoration: none;
-            margin-top: auto;
-            transition: opacity 0.2s ease;
+            font-size: 13px;
         }
 
-        .btn-view:hover {
-            opacity: 0.9;
+        /* INPUT & SELECT */
+        .custom-select, .custom-input, .custom-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s ease;
+            background-color: #fff;
+        }
+
+        .custom-select:focus, .custom-input:focus, .custom-textarea:focus {
+            border-color: #7c3aed;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .input-row .custom-input {
+            flex: 1;
+        }
+
+        .note-text {
+            font-size: 12px;
+            color: #ef4444;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .custom-textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .char-count {
+            text-align: right;
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        /* ACTION AREA */
+        .action-area {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .warning-text {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+
+        .btn-submit {
+            background-color: #22c55e;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #16a34a;
+        }
+
+        @media (max-width: 600px) {
+            .input-row {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        
+        <h1 class="page-title">CÀY THUÊ - <span>HẠT GIỐNG</span></h1>
+        <p class="sub-notice">Điền đúng thông tin cần thiết hoặc liên hệ Admin | Cuối trang | Để hoàn thành đơn</p>
 
-        <!-- ================= MỤC 1: GROW A GARDEN 2 ================= -->
-        <div class="section-block">
-            <h1 class="header-title">
-                CÀY THUÊ <span class="highlight">GROW A GARDEN 2</span> 🌱 🍇 🪓
-            </h1>
-
-            <div class="card-grid">
-
-                <!-- 1. HẠT GIỐNG -->
-                <div class="card">
-                    <div class="card-img-container">
-                        <a href="https://ibb.co/0pvKfSf7" target="_blank">
-                            <img src="https://i.ibb.co/0pvKfSf7/image.jpg" alt="Hạt Giống">
-                        </a>
+        <div class="form-card">
+            <form action="#" method="POST">
+                
+                <!-- BƯỚC 1 -->
+                <div class="form-group">
+                    <div class="step-title">
+                        <span class="step-num">1</span>
+                        <span>Chọn Gói Cần Thuê</span>
                     </div>
-                    <div class="card-title">HẠT GIỐNG</div>
-                    <div class="card-status">Sẵn Sàng</div>
-                    <!-- Thay duong-dan-hat-giong.html bằng link của bạn -->
-                    <a href="duong-dan-hat-giong.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                    <select class="custom-select" required>
+                        <option value="" disabled selected>Tìm và chọn gói dịch vụ cần thuê...</option>
+                        <option value="1">HẠT 100 - 800 HẠT - 16,000 đ</option>
+                        <option value="2">HẠT 500 - 200 HẠT - 16,000 đ</option>
+                        <option value="3">HẠT 500 - 2,000 HẠT - 35,000 đ</option>
+                        <option value="4">HẠT 1000 - 200 HẠT - 16,000 đ</option>
+                        <option value="5">BAMBOO (TRE) - 30000 HẠT - 40,000 đ</option>
+                        <option value="6">BAMBOO (TRE) - 100000 HẠT - 90,000 đ</option>
+                        <option value="7">SUN BLOSSOM - MOON BLOOM - 5,000 đ</option>
+                        <option value="8">VENUS FLY TRAP - 10,000 đ</option>
+                        <option value="9">DRAGON BREATH - 8 HẠT - 16,000 đ</option>
+                        <option value="10">HẠT RAINBOW (HẠT BẢY MÀU) 100 HẠT - 20,000 đ</option>
+                    </select>
                 </div>
 
-                <!-- 2. PET (BLACK DRAGON) -->
-                <div class="card">
-                    <div class="card-img-container">
-                        <a href="https://ibb.co/kVhFrv3Z" target="_blank">
-                            <img src="https://i.ibb.co/kVhFrv3Z/image.jpg" alt="Pet Black Dragon">
-                        </a>
+                <!-- BƯỚC 2 -->
+                <div class="form-group">
+                    <div class="step-title">
+                        <span class="step-num">2</span>
+                        <span>Thông Tin Tài Khoản</span>
                     </div>
-                    <div class="card-title">PET</div>
-                    <div class="card-status">Sẵn Sàng</div>
-                    <a href="duong-dan-pet.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                    <div class="input-row">
+                        <input type="text" class="custom-input" placeholder="Nhập tài khoản của bạn" required>
+                        <input type="password" class="custom-input" placeholder="Nhập mật khẩu của tài khoản đó" required>
+                    </div>
+                    <div class="note-text">
+                        ⚠️ Có thể nhập chuỗi 2FA, link game pass hoặc cookie liên quan. Nếu hay bị văng/thiếu bí mật, sẽ hỗ trợ riêng.
+                    </div>
                 </div>
 
-                <!-- 3. TIỀN GAME -->
-                <div class="card">
-                    <div class="card-img-container">
-                        <a href="https://ibb.co/j9hvC6wn" target="_blank">
-                            <img src="https://i.ibb.co/j9hvC6wn/image.jpg" alt="Tiền Game">
-                        </a>
+                <!-- BƯỚC 3 -->
+                <div class="form-group">
+                    <div class="step-title">
+                        <span class="step-num">3</span>
+                        <span>Ghi Chú & Xác Nhận</span>
                     </div>
-                    <div class="card-title">TIỀN GAME</div>
-                    <div class="card-status">Sẵn Sàng</div>
-                    <a href="duong-dan-tien-game.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                    <textarea class="custom-textarea" maxlength="500" placeholder="Nhập ghi chú cho admin nếu có..."></textarea>
+                    <div class="char-count">0 / 500</div>
                 </div>
 
-                <!-- 4. SHOP GEAR -->
-                <div class="card">
-                    <div class="card-img-container">
-                        <a href="https://ibb.co/XZFQjB38" target="_blank">
-                            <img src="https://i.ibb.co/XZFQjB38/image.jpg" alt="Shop Gear">
-                        </a>
-                    </div>
-                    <div class="card-title">SHOP GEAR</div>
-                    <div class="card-status">Sẵn Sàng</div>
-                    <a href="duong-dan-shop-gear.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
+                <!-- NÚT ĐẶT HÀNG -->
+                <div class="action-area">
+                    <p class="warning-text">Vui lòng chọn gói cần thuê</p>
+                    <button type="submit" class="btn-submit">
+                        🛒 Tạo Đơn Hàng
+                    </button>
                 </div>
 
-            </div>
-        </div>
-
-        <!-- ================= MỤC 2: BLOX FRUIT ================= -->
-        <div class="section-block">
-            <h1 class="header-title">
-                CÀY THUÊ <span class="highlight">BLOX FRUIT</span>
-            </h1>
-
-            <div class="card-grid">
-
-                <!-- 1. CÀY THUÊ GAME PASS -->
-                <div class="card">
-                    <div class="card-img-container">
-                        <a href="https://ibb.co/rKdSsW2v" target="_blank">
-                            <img src="https://i.ibb.co/rKdSsW2v/image.jpg" alt="Cày Thuê Game Pass">
-                        </a>
-                    </div>
-                    <div class="card-title">CÀY THUÊ GAME PASS</div>
-                    <div class="card-status">Sẵn Sàng</div>
-                    <a href="duong-dan-gamepass.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
-                </div>
-
-                <!-- 2. SELL GAMEPASS, PERM -->
-                <div class="card">
-                    <div class="card-img-container">
-                        <a href="https://ibb.co/35mBmz7c" target="_blank">
-                            <img src="https://i.ibb.co/35mBmz7c/image.jpg" alt="Sell Gamepass, Perm">
-                        </a>
-                    </div>
-                    <div class="card-title">SELL GAMEPASS, PERM</div>
-                    <div class="card-status">Sẵn Sàng</div>
-                    <a href="duong-dan-perm.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
-                </div>
-
-                <!-- 3. SELL TRÁI RƯƠNG -->
-                <div class="card">
-                    <div class="card-img-container">
-                        <a href="https://ibb.co/3XwJLjM" target="_blank">
-                            <img src="https://i.ibb.co/3XwJLjM/image.jpg" alt="Sell Trái Rương">
-                        </a>
-                    </div>
-                    <div class="card-title">SELL TRÁI RƯƠNG</div>
-                    <div class="card-status">Sẵn Sàng</div>
-                    <a href="duong-dan-trai-ruong.html" class="btn-view">XEM TẤT CẢ &rarr;</a>
-                </div>
-
-            </div>
+            </form>
         </div>
 
     </div>
